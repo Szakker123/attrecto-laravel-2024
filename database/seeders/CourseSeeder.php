@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Course;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,21 +15,24 @@ class CourseSeeder extends Seeder
     {
         $courses = [
             [
-                'title' => 'Elso pelda title',
-                'description' => 'Elso pelda description',
-                'author' => 'Author egy',
-                'url' => 'http://courseegy.hu',
+                "id" => 1,
+                "title" => "Elso pelda title",
+                "description" => "Elso pelda description",
+                "author" => "Author egy",
+                "url" => "http://courseegy.hu",
             ],
             [
-                'title' => 'Masodik pelda title',
-                'description' => 'Masodik pelda description',
-                'author' => 'Author ketto',
-                'url' => 'http://courseketto.hu',
+                "id" => 2,
+                "title" => "Masodik pelda title",
+                "description" => "Masodik pelda description",
+                "author" => "Author ketto",
+                "url" => "http://courseketto.hu",
             ],
         ];
 
-        foreach ($courses as $course) {
-            
+        foreach ($courses as $course)
+        {
+            Course::firstOrCreate($course);
         }
     }
 }
